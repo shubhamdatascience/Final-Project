@@ -1,0 +1,40 @@
+<div class="grid-container">
+  <h1 class="mat-h1">Current Status</h1>
+  <mat-grid-list cols="2" rowHeight="350px">
+    <mat-grid-tile *ngFor="let card of cards" [colspan]="card.cols" [rowspan]="card.rows">
+      <mat-card class="main dashboard-card" style="color:white">
+        <br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br>
+        <br><br>
+        <mat-card-header>
+          <mat-card-title>
+            {{card.title}}
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <div><h1>{{card.name}}</h1></div>
+        </mat-card-content>
+        <div class="button-row">
+          <button style="left:47%" (click)="bookFlights()" mat-raised-button color="primary">Check Flights</button>
+        </div>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <mat-grid-list cols="2" rowHeight="350px">
+    <mat-grid-tile *ngFor="let flight of flightInfo" [colspan]="flight.cols" [rowspan]="flight.rows">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            <h1>{{flight.title}}</h1>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <div>{{flight.details}}</div>
+          <div>{{flight.cost}}</div>
+          <div>{{flight.departure}}</div>
+          <div>{{flight.arival}}</div>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
